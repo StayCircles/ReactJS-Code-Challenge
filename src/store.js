@@ -27,7 +27,18 @@ const defaultState = {
       completed: false,
       text: 'Optional: add tests'
     }
-  ]
+  ],
+  filterOption:  [{
+    id: 1,
+    textLabel: 'All'
+  },{
+    id: 2,
+    textLabel: 'Complete'
+  },{
+    id: 3,
+    textLabel: 'Incomplete'
+  }],
+  activeFilterId: 1
 }
 
 class TodosContainer extends Container {
@@ -57,6 +68,10 @@ class TodosContainer extends Container {
 
   getList () {
     return this.state.list
+  }
+
+  getOptions () {
+    return this.state.filterOption;
   }
 
   toggleComplete = async id => {
@@ -93,6 +108,26 @@ class TodosContainer extends Container {
 
     this.syncStorage()
   }
-}
 
+  setFilter = async id => {
+    await this.setState({activeFilterId: id});
+    this.updateTodoList();
+  }
+  updateTodoList () {
+    let list = [];
+    let activeFilterId = this.state.activeFilterId;
+    this.state.list.forEach((todo)=> {
+      if(activeFilterId === 2 && todo.completed){
+        list.push(todo);
+      } else if(activeFilterId === 3 && !todo.completed){
+        list.push(todo);
+      }
+    });
+    this.setState({list});
+  }
+  // getActiveFilterId = ()=> {
+  //   return this.state.activeFilterId;
+  // }
+}
+  
 export default TodosContainer
