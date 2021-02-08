@@ -1,30 +1,22 @@
 import React from 'react'
-import { Provider, Subscribe } from 'unstated'
 
 import styled from 'styled-components'
 
-import TodosContainer from './store'
+import useTodos from './useTodos'
 
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
 
 function App () {
+  const { list, createTodo, toggleComplete } = useTodos()
+
   return (
-    <Provider>
       <Wrapper>
-        <Subscribe to={[TodosContainer]}>
-          {todos => {
-            const list = todos.getList()
-            return (
-              <TodosWrapper>
-                <AddTodo onAddTodo={todos.createTodo} />
-                <TodoList items={list} toggleComplete={todos.toggleComplete} />
-              </TodosWrapper>
-            )
-          }}
-        </Subscribe>
+        <TodosWrapper>
+          <AddTodo onAddTodo={createTodo} />
+          <TodoList items={list} toggleComplete={toggleComplete} />
+        </TodosWrapper>
       </Wrapper>
-    </Provider>
   )
 }
 
