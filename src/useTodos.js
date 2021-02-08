@@ -45,18 +45,18 @@ function reducer(state, action) {
           return JSON.parse(state)
         }
       }
-  
+
       return initialState
 
     case 'toggle_complete':
         const { id } = action
-    
+
         return {
           list: state.list.map(item => {
             if (item.id === id) {
               return {
                 ...item,
-                completed: !item.completed 
+                completed: !item.completed
               }
             }
 
@@ -73,7 +73,7 @@ function reducer(state, action) {
 
       const list = state.list.concat(item)
       return { list }
-      
+
     default:
       throw new Error('Unknown type: ' + action.type);
   }
@@ -93,7 +93,7 @@ function useTodos() {
 
   const createTodo = (text) => dispatch({ type: 'create_todo', text })
   const toggleComplete = (id) => dispatch({ type: 'toggle_complete', id })
-  
+
   return { list, createTodo, toggleComplete }
 }
 
