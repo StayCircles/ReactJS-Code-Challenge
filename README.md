@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Built using [styled-components](https://www.styled-components.com) and [Unstated](https://github.com/jamiebuilds/unstated).
+Built using [styled-components](https://www.styled-components.com)
 
 ## Challenge
 This is a simple todo app with the ability to create todos and mark them as complete.
@@ -10,7 +10,8 @@ For your test, you need to add:
 
 1. The ability to filter the todos between "completed", "active" or "all"
 2. Create new lists and show all of the lists of todos. When opening any list, it will then show the items of the list.
-3. Optional: add tests where you think they're needed, especially for the store.js file. Feel free to refactor things to make testing easier.
+3. Use styled-components for dynamic styling.
+4. Optional: add tests where you think they're needed. Feel free to refactor things to make testing easier.
 
 ## Available Scripts
 
