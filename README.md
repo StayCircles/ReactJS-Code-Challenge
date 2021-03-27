@@ -1,30 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1) The first error I resolved is that start command in package.json the start script I removed browser=none
 
-Built using [styled-components](https://www.styled-components.com)
+2) I setup the filters for All,Active and Completed Tasks.
 
-## Challenge
-This is a simple todo app with the ability to create todos and mark them as complete.
-The problem with this app is that it is too simple and it is missing some features!
-Right now we only have one list showing with all its todos there, and we can’t create new lists, and we can't filter todos.
-For your test, you need to add:
+3) Now Users can create multiple lists by clicking on any list a user can make as many as he wants.He can also make the main lists also.
 
-1. The ability to filter the todos between "completed", "active" or "all"
-2. Create new lists and show all of the lists of todos. When opening any list, it will then show the items of the list.
-3. Use styled-components for dynamic styling.
-4. Optional: add tests where you think they're needed. Feel free to refactor things to make testing easier.
+4) I setup the redux thunk and reducers for the redux implementation of global state management.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
